@@ -10,13 +10,14 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private int clicks = 0;
     //loldqsd
-    ImageButton FishClick;
     TextView FishView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FishView = (TextView) findViewById(R.id.FishView);
     }
+
 
     public void FishClick(View view) {
         clicks++;
