@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         FishView = (TextView) findViewById(R.id.FishView);
     }
 
+    
+
 
     public void FishClick(View view) {
         clicks++;
