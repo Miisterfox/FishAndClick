@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_1"
+        android:enabled="true"
+        android:icon="@drawable/fish"
+        android:title="@string/bottom_navigation_menu_fish"/>
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:icon="@drawable/fish"
+        android:title="@string/bottom_navigation_menu_shop"/>
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:icon="@drawable/fish"
+        android:title="@string/bottom_navigation_menu_upgrades"/>
+</menu>

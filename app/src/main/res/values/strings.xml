@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Fish\'N\'Click</string>
+
+    <!-- BOTTOM NAVIGATION VIEW -->
+    <string name="bottom_navigation_menu_fish">Fish</string>
+    <string name="bottom_navigation_menu_shop">Shop</string>
+    <string name="bottom_navigation_menu_upgrades">Upgrades</string>
 </resources>
