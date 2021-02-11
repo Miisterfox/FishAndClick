@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int clicks = 0;
-    //loldqsd
     TextView FishView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
