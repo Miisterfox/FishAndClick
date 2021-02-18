@@ -1,26 +1,7 @@
 <resources>
     <string name="app_name">Fish\'N\'Click</string>
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
-
->>>>>>> parent of 4642d34 (Merge branch 'main' into Yanis)
     <!-- BOTTOM NAVIGATION VIEW -->
     <string name="bottom_navigation_menu_fish">Fish</string>
     <string name="bottom_navigation_menu_shop">Shop</string>
     <string name="bottom_navigation_menu_upgrades">Upgrades</string>
-<<<<<<< HEAD
-=======
-    <string name="title_activity_upgrades">Upgrades</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
->>>>>>> Stashed changes
->>>>>>> parent of 4642d34 (Merge branch 'main' into Yanis)
 </resources>
