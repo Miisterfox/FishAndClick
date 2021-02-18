@@ -18,19 +18,20 @@ public class Shop extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.shop);
-        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.fish:
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        break;
+                        return true;
                     case R.id.shop:
-                        break;
+                        return true;
                     case R.id.upgrades:
                         startActivity(new Intent(getApplicationContext(),Upgrades.class));
-                        break;
+                        return true;
                 }
+                return false;
             }
         });
 
