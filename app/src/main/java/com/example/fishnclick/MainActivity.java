@@ -34,17 +34,17 @@ public class MainActivity extends AppCompatActivity {
         updateFish();
     }
 
-    
+
     private void updateFish() {
         Fish SelectedFish = fish.get(fishIndex);
         FishName.setText(SelectedFish.toString());
-        FishView.setText(SelectedFish.getClicks() + " clicks!");
+        FishView.setText(SelectedFish.getClicks() +" " +SelectedFish.toString()+"s");
         FishClick.setImageResource(SelectedFish.getLogo());
     }
     public void FishClick(View view) {
         Fish SelectedFish = fish.get(fishIndex);
         SelectedFish.addClick();
-        FishView.setText(SelectedFish.getClicks() + " clicks!");
+        FishView.setText(SelectedFish.getClicks() +" " +SelectedFish.toString()+"s");
         //moneyupdate
         money+=SelectedFish.getValue();
         moneyText.setText(money+"$");
