@@ -8,6 +8,13 @@ public class Fish {
     public Fish(String name, int value) {
         this.name=name;
         this.value=value;
+        clicks=0;
     }
-    public 
+    public void addClick() {
+        clicks++;
+    }
+
+    public int getClicks() {
+        return clicks;
+    }
 }
