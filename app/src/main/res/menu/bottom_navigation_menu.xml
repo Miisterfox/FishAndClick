@@ -1,16 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 s    <item
-        android:id="@+id/page_1"
+        android:id="@+id/fish"
         android:enabled="true"
         android:icon="@drawable/fish1"
         android:title="@string/bottom_navigation_menu_fish"/>
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/shop"
         android:enabled="true"
         android:icon="@drawable/fish1"
         android:title="@string/bottom_navigation_menu_shop"/>
     <item
-        android:id="@+id/page_3"
+        android:id="@+id/upgrades"
         android:enabled="true"
         android:icon="@drawable/fish1"
         android:title="@string/bottom_navigation_menu_upgrades"/>
