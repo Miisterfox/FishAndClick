@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -22,6 +23,23 @@ public class MainActivity extends AppCompatActivity {
     private int fishIndex;
     private TextView moneyText;
     private int money;
+
+    //peche chaque poisson toutes les 5s
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            for(Fish f : fish) {
+                f.addClick();
+                money+=f.getValue();
+                moneyText.setText(money+"$");
+            }
+            updateFish();
+            handler.postDelayed(this, 5000);
+
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        handler.postDelayed(runnable, 1000);
     }
 
 
