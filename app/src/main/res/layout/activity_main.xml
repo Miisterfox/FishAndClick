@@ -20,8 +20,8 @@
 
     <ImageButton
         android:id="@+id/FishClick"
-        android:layout_width="0dp"
-        android:layout_height="409dp"
+        android:layout_width="308dp"
+        android:layout_height="324dp"
         android:background="#00000000"
         android:onClick="FishClick"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,13 +61,13 @@
 
     <ImageButton
         android:id="@+id/ArrowLeft"
-        android:onClick="ArrowLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="ArrowLeft"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/FishClick"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
+        app:srcCompat="@drawable/abc_vector_test"
+        tools:layout_editor_absoluteX="3dp" />
 
     <ImageButton
         android:id="@+id/arrowLeft"
@@ -76,7 +76,7 @@
         android:onClick="ArrowRight"
         android:rotation="180"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/FishClick"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/abc_vector_test" />
 
