@@ -59,20 +59,19 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.fish);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.fish:
-                        return true;
+                        break;
                     case R.id.shop:
                         startActivity(new Intent(getApplicationContext(),Shop.class));
-                        return true;
+                        break;
                     case R.id.upgrades:
                         startActivity(new Intent(getApplicationContext(),Upgrades.class));
-                        return true;
+                        break;
                 }
-                return false;
             }
         });
         handler.postDelayed(runnable, 1000);

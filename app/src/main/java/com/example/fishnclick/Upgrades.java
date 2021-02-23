@@ -18,20 +18,19 @@ public class Upgrades extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.upgrades);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.fish:
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        return true;
+                        break;
                     case R.id.shop:
                         startActivity(new Intent(getApplicationContext(),Shop.class));
-                        return true;
+                        break;
                     case R.id.upgrades:
-                        return true;
+                        break;
                 }
-                return false;
             }
         });
 
