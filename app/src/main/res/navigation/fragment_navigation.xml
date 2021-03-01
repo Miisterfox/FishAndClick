@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_navigation"
+    app:startDestination="@id/fish">
+
+    <fragment
+        android:id="@+id/fish"
+        android:name="com.example.fishnclick.FishFragment"
+        android:label="fragment_fish"
+        tools:layout="@layout/fragment_fish" >
+        <action
+            android:id="@+id/action_fishFragment_to_shopFragment"
+            app:destination="@id/shop" />
+        <action
+            android:id="@+id/action_fish_to_upgradesFragment"
+            app:destination="@id/upgradesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shop"
+        android:name="com.example.fishnclick.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/upgradesFragment"
+        android:name="com.example.fishnclick.UpgradesFragment"
+        android:label="fragment_upgrades"
+        tools:layout="@layout/fragment_upgrades" >
+        <action
+            android:id="@+id/action_upgradesFragment_to_shop"
+            app:destination="@id/shop" />
+    </fragment>
+</navigation>
