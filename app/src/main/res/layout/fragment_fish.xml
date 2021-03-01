@@ -59,7 +59,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <ImageButton
-        android:id="@+id/ArrowLeft"
+        android:id="@+id/arrowLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
         tools:layout_editor_absoluteX="3dp" />
 
     <ImageButton
-        android:id="@+id/arrowLeft"
+        android:id="@+id/arrowRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="180"
