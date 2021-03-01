@@ -57,5 +57,6 @@ public class FishFragment extends Fragment {
                 moneyText.setText(money + "$");
             }
         });
+        
     }
 }
