@@ -19,11 +19,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
+    private static ArrayList<Fish> fish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fish = new ArrayList<>();
+        fish.add(new Fish("Bar", 1, R.drawable.fish1));
+        fish.add(new Fish("Carpe", 2, R.drawable.fish2));
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.fish);
@@ -50,4 +54,19 @@ public class MainActivity extends AppCompatActivity{
             }
         });
     }
+
+    public static ArrayList<Fish> getFish() {
+        return fish;
+    }
+
+    public static Fish getFish(String name) {
+        for(Fish f : fish){
+            if(f.toString()==name){
+                return f;
+            }
+        }
+        return null;
+    }
+
+
 }

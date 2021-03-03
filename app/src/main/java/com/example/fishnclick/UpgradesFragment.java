@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 public class UpgradesFragment extends Fragment {
 
     public UpgradesFragment() {
@@ -24,7 +26,7 @@ public class UpgradesFragment extends Fragment {
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.Buy:
-                Fish fish = FishFragment.getFish("bar");
+                Fish fish = MainActivity.getFish("bar");
                 FishFragment.setMoney(-(FishFragment.getMoney()*fish.getLevel()));
                 fish.levelUp();
                 break;

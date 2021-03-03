@@ -24,7 +24,6 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     private TextView FishView;
     private TextView FishName;
     private ImageButton fishButton;
-    private static ArrayList<Fish> fish;
     private int fishIndex;
     private TextView moneyText;
     private static int money;
@@ -43,14 +42,10 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         ImageButton arrowRight = (ImageButton) view.findViewById(R.id.arrowRight);
         arrowRight.setOnClickListener(this);
 
-        fish = new ArrayList<>();
-        fish.add(new Fish("Bar", 1, R.drawable.fish1));
-        fish.add(new Fish("Carpe", 2, R.drawable.fish2));
         fishIndex = 0;
         FishView = (TextView) view.findViewById(R.id.FishView);;
         FishName = (TextView) view.findViewById(R.id.FishName);
         moneyText = (TextView) view.findViewById(R.id.Money);
-        money = 0;
         moneyText.setText(money + "$");
         updateFish();
         return view;
@@ -74,7 +69,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     }
 
     private void updateFish() {
-        Fish SelectedFish = fish.get(fishIndex);
+        Fish SelectedFish = MainActivity.getFish().get(fishIndex);
 
         FishName.setText(SelectedFish.toString());
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
@@ -83,7 +78,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
 
 
     public void FishClick() {
-        Fish SelectedFish = fish.get(fishIndex);
+        Fish SelectedFish = MainActivity.getFish().get(fishIndex);
         SelectedFish.addClick();
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
         //moneyupdate
@@ -93,7 +88,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
 
     public void ArrowLeft() {
         if (fishIndex == 0) {
-            fishIndex = fish.size() - 1;
+            fishIndex = MainActivity.getFish().size() - 1;
         } else {
             fishIndex--;
         }
@@ -102,7 +97,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
 
 
     public void ArrowRight() {
-        if (fishIndex == fish.size() - 1) {
+        if (fishIndex == MainActivity.getFish().size() - 1) {
             fishIndex = 0;
         } else {
             fishIndex++;
@@ -110,24 +105,12 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         updateFish();
     }
 
-
-    //dégueulasse
-    public static Fish getFish(String name) {
-        for (Fish f : fish) {
-            if (f.toString() == name) {
-                return f;
-            }
-        }
-        return null;
-    }
-
-    public static int getMoney(){
+    public static int getMoney() {
         return money;
     }
 
     public static void setMoney(int value){
         money += value;
     }
-
 
 }
