@@ -1,24 +1,15 @@
 package com.example.fishnclick;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.Navigation;
-
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 public class FishFragment extends Fragment implements View.OnClickListener{
     private TextView FishView;
@@ -26,7 +17,6 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     private ImageButton fishButton;
     private int fishIndex;
     private TextView moneyText;
-    private static int money;
 
     public FishFragment() {
         // Required empty public constructor
@@ -46,6 +36,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         FishView = (TextView) view.findViewById(R.id.FishView);;
         FishName = (TextView) view.findViewById(R.id.FishName);
         moneyText = (TextView) view.findViewById(R.id.Money);
+        int money=MainActivity.getMoney();
         moneyText.setText(money + "$");
         updateFish();
         return view;
@@ -82,7 +73,9 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         SelectedFish.addClick();
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
         //moneyupdate
+        int money=MainActivity.getMoney();
         money += SelectedFish.getValue();
+        MainActivity.setMoney(money);
         moneyText.setText(money + "$");
     }
 
@@ -103,14 +96,6 @@ public class FishFragment extends Fragment implements View.OnClickListener{
             fishIndex++;
         }
         updateFish();
-    }
-
-    public static int getMoney() {
-        return money;
-    }
-
-    public static void setMoney(int value){
-        money += value;
     }
 
 }

@@ -1,16 +1,13 @@
 package com.example.fishnclick;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 
-import java.lang.reflect.Array;
+import androidx.fragment.app.Fragment;
+
 import java.util.ArrayList;
 
 public class UpgradesFragment extends Fragment implements View.OnClickListener{
@@ -42,7 +39,7 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
             case R.id.B1:
                 System.out.println("OUI");
                 Fish fish = MainActivity.getFish("Bar");
-                FishFragment.setMoney(-(FishFragment.getMoney()*fish.getLevel()));
+                MainActivity.setMoney(-(MainActivity.getMoney()*fish.getLevel()));
                 fish.levelUp();
                 B1.setText(((1+fish.getLevel())*fish.getValue()) + "€");
                 break;
