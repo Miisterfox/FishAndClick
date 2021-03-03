@@ -7,7 +7,6 @@ public class Fish {
     private int value;
     private int clicks;
     private int logoID;
-    private int level;
     public Fish(String name, int value,int logo) {
         this.name=name;
         this.value=value;
@@ -31,6 +30,4 @@ public class Fish {
     public int getValue() {
         return value;
     }
-    public void levelUp(){level+=1;}
-    public int getLevel(){return level;}
 }
