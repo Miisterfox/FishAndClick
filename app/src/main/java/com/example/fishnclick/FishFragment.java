@@ -3,6 +3,7 @@ package com.example.fishnclick;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -18,7 +19,6 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     private TextView FishView;
     private TextView FishName;
     private ImageButton fishButton;
-    private static ArrayList<Fish> fish;
     private int fishIndex;
     private TextView moneyText;
     private int money;
@@ -37,7 +37,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         ImageButton arrowRight = (ImageButton) view.findViewById(R.id.arrowRight);
         arrowRight.setOnClickListener(this);
 
-        fish = new ArrayList<>();
+        (AppCompatActivity)getActivity().getFish();
         fish.add(new Fish("Bar", 1, R.drawable.fish1));
         fish.add(new Fish("Carpe", 2, R.drawable.fish2));
         fishIndex = 0;
