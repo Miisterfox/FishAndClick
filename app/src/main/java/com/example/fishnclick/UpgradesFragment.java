@@ -20,4 +20,15 @@ public class UpgradesFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_upgrades, container, false);
     }
+
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.Buy:
+                Fish fish = FishFragment.getFish("bar");
+                FishFragment.setMoney(-(FishFragment.getMoney()*fish.getLevel()));
+                fish.levelUp();
+                break;
+        }
+    }
+
 }

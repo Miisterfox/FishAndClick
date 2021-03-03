@@ -34,12 +34,15 @@ public class MainActivity extends AppCompatActivity{
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 switch(item.getItemId()){
                     case R.id.fish:
-                        fragmentTransaction.replace(R.id.content,new FishFragment()).commit();
+                        fragmentTransaction.show(fragmentManager.findFragmentById(R.id.mainFragment));
+                        fragmentTransaction.replace(R.id.content,new Fragment()).commit();
                         return true;
                     case R.id.shop:
+                        fragmentTransaction.hide(fragmentManager.findFragmentById(R.id.mainFragment));
                         fragmentTransaction.replace(R.id.content,new ShopFragment()).commit();
                         return true;
                     case R.id.upgrades:
+                        fragmentTransaction.hide(fragmentManager.findFragmentById(R.id.mainFragment));
                         fragmentTransaction.replace(R.id.content,new UpgradesFragment()).commit();
                         return true;
                 }
