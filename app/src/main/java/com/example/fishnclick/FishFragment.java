@@ -82,24 +82,6 @@ public class FishFragment extends Fragment {
                 money += SelectedFish.getValue();
                 moneyText.setText(money + "$");
 
-<<<<<<< Updated upstream
-=======
-    public void updateFish() {
-        Fish SelectedFish = fish.get(fishIndex);
-
-        FishName.setText(SelectedFish.toString());
-        FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
-        fishButton.setImageResource(SelectedFish.getLogo());
-    }
-    public void FishClick() {
-        Fish SelectedFish = fish.get(fishIndex);
-        SelectedFish.addClick();
-        FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
-        //moneyupdate
-        money += SelectedFish.getValue();
-        moneyText.setText(money + "$");
-    }
->>>>>>> Stashed changes
 
             }
         });
