@@ -2,28 +2,19 @@ package com.example.fishnclick;
 
 import android.content.Context;
 import android.os.Bundle;
-<<<<<<< HEAD
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
-=======
->>>>>>> Test
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
-=======
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
->>>>>>> Test
 
 public class FishFragment extends Fragment implements View.OnClickListener{
     private GestionInterface gestionInterface;
@@ -32,12 +23,8 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     private ImageButton fishButton;
     private int fishIndex;
     private TextView moneyText;
-<<<<<<< HEAD
     private int money;
     private ArrayList<Fish> fish;
-=======
-
->>>>>>> Test
     public FishFragment() {
         // Required empty public constructor
     }
@@ -66,11 +53,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         FishView = (TextView) view.findViewById(R.id.FishView);;
         FishName = (TextView) view.findViewById(R.id.FishName);
         moneyText = (TextView) view.findViewById(R.id.Money);
-<<<<<<< HEAD
         money = 0;
-=======
-        int money=MainActivity.getMoney();
->>>>>>> Test
         moneyText.setText(money + "$");
         updateFish();
         return view;
@@ -105,9 +88,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         SelectedFish.addClick();
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
         //moneyupdate
-        int money=MainActivity.getMoney();
         money += SelectedFish.getValue();
-        MainActivity.setMoney(money);
         moneyText.setText(money + "$");
     }
 
