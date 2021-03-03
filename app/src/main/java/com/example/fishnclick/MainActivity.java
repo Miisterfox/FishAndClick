@@ -11,9 +11,14 @@ public class MainActivity extends AppCompatActivity implements GestionInterface{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fish=new ArrayList<Fish>();
+
+        fish.add(new Fish("Bar", 1, R.drawable.fish1));
+        fish.add(new Fish("Carpe", 2, R.drawable.fish2));
         setContentView(R.layout.activity_main);
     }
     @Override
-        public void getFish() {
+        public ArrayList<Fish> getFish() {
+        return fish;
         }
 }

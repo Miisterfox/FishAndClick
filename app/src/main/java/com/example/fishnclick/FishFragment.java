@@ -1,5 +1,6 @@
 package com.example.fishnclick;
 
+import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,15 +17,27 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class FishFragment extends Fragment implements View.OnClickListener{
+    private GestionInterface gestionInterface;
     private TextView FishView;
     private TextView FishName;
     private ImageButton fishButton;
     private int fishIndex;
     private TextView moneyText;
     private int money;
-
+    private ArrayList<Fish> fish;
     public FishFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            gestionInterface=(GestionInterface)context;
+            fish=gestionInterface.getFish();
+        } catch(ClassCastException castException) {
+
+        }
     }
 
     @Override
@@ -36,10 +49,6 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         arrowLeft.setOnClickListener(this);
         ImageButton arrowRight = (ImageButton) view.findViewById(R.id.arrowRight);
         arrowRight.setOnClickListener(this);
-
-        (AppCompatActivity)getActivity().getFish();
-        fish.add(new Fish("Bar", 1, R.drawable.fish1));
-        fish.add(new Fish("Carpe", 2, R.drawable.fish2));
         fishIndex = 0;
         FishView = (TextView) view.findViewById(R.id.FishView);;
         FishName = (TextView) view.findViewById(R.id.FishName);

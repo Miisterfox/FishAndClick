@@ -1,5 +1,7 @@
 package com.example.fishnclick;
 
+import java.util.ArrayList;
+
 public interface GestionInterface {
-    public void getFish();
+    public ArrayList<Fish> getFish();
 }
