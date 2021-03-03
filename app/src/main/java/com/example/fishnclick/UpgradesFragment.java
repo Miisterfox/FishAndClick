@@ -9,14 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class UpgradesFragment extends Fragment implements View.OnClickListener{
     private ArrayList<Fish> fish;
-    private Button B1;
-    private Button B2;
+    private Button Button1;
+    private Button Button2;
+    private TextView CarpeLevel;
+    private TextView BarLevel;
 
     public UpgradesFragment() {
         // Required empty public constructor
@@ -28,25 +31,38 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
         View view = inflater.inflate(R.layout.fragment_upgrades, container, false);
         Fish bar = MainActivity.getFish("Bar");
         Fish carpe = MainActivity.getFish("Carpe");
-        B1 = (Button) view.findViewById(R.id.B1);
-        B2 = (Button) view.findViewById(R.id.B2);
-        System.out.println("OUI");
-        B1.setText(((1+bar.getLevel())*bar.getValue()) + "€");
-        B2.setText(((1+carpe.getLevel())*bar.getValue()) + "€");
+        Button1 = (Button) view.findViewById(R.id.barB);
+        Button2 = (Button) view.findViewById(R.id.carpeB);
+        Button1.setOnClickListener(this);
+        Button2.setOnClickListener(this);
+        BarLevel = (TextView) view.findViewById(R.id.barlevel);
+        CarpeLevel = (TextView) view.findViewById(R.id.carpelevel);
+        BarLevel.setText("lvl " + bar.getLevel());
+        CarpeLevel.setText("lvl " + carpe.getLevel());
+        Button1.setText(((1+bar.getLevel())*bar.getValue()) + "€");
+        Button2.setText(((1+carpe.getLevel())*bar.getValue()) + "€");
         return view;
     }
+
 
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.B1:
-                System.out.println("OUI");
-                Fish fish = MainActivity.getFish("Bar");
-                FishFragment.setMoney(-(FishFragment.getMoney()*fish.getLevel()));
-                fish.levelUp();
-                B1.setText(((1+fish.getLevel())*fish.getValue()) + "€");
+            case R.id.barB:
+                Fish bar = MainActivity.getFish("Bar");
+                OnLevelUp(bar,Button1,BarLevel);
+                break;
+            case R.id.carpeB:
+                Fish carpe = MainActivity.getFish("Carpe");
+                OnLevelUp(carpe,Button2,CarpeLevel);
                 break;
         }
     }
 
+    public void OnLevelUp(Fish fish,Button button,TextView text){
+        FishFragment.setMoney(-(FishFragment.getMoney()*fish.getLevel()));
+        fish.levelUp();
+        button.setText(((1+fish.getLevel())*fish.getValue()) + "€");
+        text.setText("lvl " + fish.getLevel());
+    }
 }
