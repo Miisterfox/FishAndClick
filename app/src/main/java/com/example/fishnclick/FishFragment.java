@@ -6,12 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-<<<<<<< HEAD
-=======
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.Navigation;
->>>>>>> origin/Yanis
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,13 +23,8 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     private ImageButton fishButton;
     private int fishIndex;
     private TextView moneyText;
-<<<<<<< HEAD
     private int money;
     private ArrayList<Fish> fish;
-=======
-    private static int money;
-
->>>>>>> origin/Yanis
     public FishFragment() {
         // Required empty public constructor
     }
@@ -60,14 +49,11 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         arrowLeft.setOnClickListener(this);
         ImageButton arrowRight = (ImageButton) view.findViewById(R.id.arrowRight);
         arrowRight.setOnClickListener(this);
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/Yanis
         fishIndex = 0;
         FishView = (TextView) view.findViewById(R.id.FishView);;
         FishName = (TextView) view.findViewById(R.id.FishName);
         moneyText = (TextView) view.findViewById(R.id.Money);
+        money = 0;
         moneyText.setText(money + "$");
         updateFish();
         return view;
@@ -91,16 +77,14 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     }
 
     private void updateFish() {
-        Fish SelectedFish = MainActivity.getFish().get(fishIndex);
+        Fish SelectedFish = fish.get(fishIndex);
 
         FishName.setText(SelectedFish.toString());
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
         fishButton.setImageResource(SelectedFish.getLogo());
     }
-
-
     public void FishClick() {
-        Fish SelectedFish = MainActivity.getFish().get(fishIndex);
+        Fish SelectedFish = fish.get(fishIndex);
         SelectedFish.addClick();
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
         //moneyupdate
@@ -110,7 +94,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
 
     public void ArrowLeft() {
         if (fishIndex == 0) {
-            fishIndex = MainActivity.getFish().size() - 1;
+            fishIndex = fish.size() - 1;
         } else {
             fishIndex--;
         }
@@ -119,23 +103,12 @@ public class FishFragment extends Fragment implements View.OnClickListener{
 
 
     public void ArrowRight() {
-        if (fishIndex == MainActivity.getFish().size() - 1) {
+        if (fishIndex == fish.size() - 1) {
             fishIndex = 0;
         } else {
             fishIndex++;
         }
         updateFish();
-<<<<<<< HEAD
-=======
-    }
-
-    public static int getMoney() {
-        return money;
-    }
-
-    public static void setMoney(int value){
-        money += value;
->>>>>>> origin/Yanis
     }
 
 }
