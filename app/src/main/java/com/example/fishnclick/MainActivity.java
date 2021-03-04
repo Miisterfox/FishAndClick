@@ -1,14 +1,13 @@
 package com.example.fishnclick;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -16,11 +15,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
     private static ArrayList<Fish> fish;
-
+    private static int money;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        money=0;
         setContentView(R.layout.activity_main);
         fish = new ArrayList<>();
         fish.add(new Fish("Bar", 1, R.drawable.fish1));
@@ -66,5 +65,12 @@ public class MainActivity extends AppCompatActivity{
         return null;
     }
 
+    public static int getMoney() {
+        return money;
+    }
+
+    public static void setMoney(int m) {
+        money=m;
+    }
 
 }
