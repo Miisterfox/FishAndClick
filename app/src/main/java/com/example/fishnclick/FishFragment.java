@@ -1,6 +1,7 @@
 package com.example.fishnclick;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         fishIndex = 0;
         FishView = (TextView) view.findViewById(R.id.FishView);;
         FishName = (TextView) view.findViewById(R.id.FishName);
-        moneyText = (TextView) view.findViewById(R.id.money);
+        moneyText = (TextView) view.findViewById(R.id.moneyUpgrades);
         moneyText.setText(money + "$");
         updateFish();
         return view;
@@ -78,7 +79,8 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         SelectedFish.addClick();
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
         //moneyupdate
-        money += SelectedFish.getValue() * (1 + SelectedFish.getLevel());
+        Log.d("Boost",""+MainActivity.getBoost());
+        money += SelectedFish.getValue() *MainActivity.getBoost() * (1 + SelectedFish.getLevel());
         updateMoney();
     }
 
