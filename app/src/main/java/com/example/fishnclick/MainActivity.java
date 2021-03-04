@@ -5,7 +5,6 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -34,17 +33,13 @@ public class MainActivity extends AppCompatActivity{
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 switch(item.getItemId()){
                     case R.id.fish:
-                        FishFragment.updateMoney();
-                        fragmentTransaction.show(fragmentManager.findFragmentById(R.id.mainFragment));
-                        fragmentTransaction.replace(R.id.content,new Fragment()).commit();
+                        fragmentTransaction.replace(R.id.mainFragment,new FishFragment()).commit();
                         return true;
                     case R.id.shop:
-                        fragmentTransaction.hide(fragmentManager.findFragmentById(R.id.mainFragment));
-                        fragmentTransaction.replace(R.id.content,new ShopFragment()).commit();
+                        fragmentTransaction.replace(R.id.mainFragment,new ShopFragment()).commit();
                         return true;
                     case R.id.upgrades:
-                        fragmentTransaction.hide(fragmentManager.findFragmentById(R.id.mainFragment));
-                        fragmentTransaction.replace(R.id.content,new UpgradesFragment()).commit();
+                        fragmentTransaction.replace(R.id.mainFragment,new UpgradesFragment()).commit();
                         return true;
                 }
                 return false;

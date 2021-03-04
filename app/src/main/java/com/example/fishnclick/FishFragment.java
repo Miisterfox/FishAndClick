@@ -35,7 +35,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         fishIndex = 0;
         FishView = (TextView) view.findViewById(R.id.FishView);;
         FishName = (TextView) view.findViewById(R.id.FishName);
-        moneyText = (TextView) view.findViewById(R.id.Money);
+        moneyText = (TextView) view.findViewById(R.id.money);
         moneyText.setText(money + "$");
         updateFish();
         return view;

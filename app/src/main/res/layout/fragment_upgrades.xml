@@ -20,7 +20,14 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="74dp"
             android:src="@drawable/fish1" />
-
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="96dp"
+            android:layout_height="43dp"
+            android:textSize="32sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView" />
         <TextView
             android:id="@+id/barlevel"
             android:layout_width="100dp"
