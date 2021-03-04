@@ -3,6 +3,13 @@ package com.example.fishnclick;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+import android.view.MenuItem;
+
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+>>>>>>> main
 
 import java.util.ArrayList;
 
@@ -11,11 +18,45 @@ public class MainActivity extends AppCompatActivity implements GestionInterface{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         fish=new ArrayList<Fish>();
 
         fish.add(new Fish("Bar", 1, R.drawable.fish1));
         fish.add(new Fish("Carpe", 2, R.drawable.fish2));
         setContentView(R.layout.activity_main);
+=======
+
+        setContentView(R.layout.activity_main);
+        fish = new ArrayList<>();
+        fish.add(new Fish("Bar", 1, R.drawable.fish1));
+        fish.add(new Fish("Carpe", 2, R.drawable.fish2));
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.fish);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                switch(item.getItemId()){
+                    case R.id.fish:
+                        FishFragment.updateMoney();
+                        fragmentTransaction.show(fragmentManager.findFragmentById(R.id.mainFragment));
+                        fragmentTransaction.replace(R.id.content,new Fragment()).commit();
+                        return true;
+                    case R.id.shop:
+                        fragmentTransaction.hide(fragmentManager.findFragmentById(R.id.mainFragment));
+                        fragmentTransaction.replace(R.id.content,new ShopFragment()).commit();
+                        return true;
+                    case R.id.upgrades:
+                        fragmentTransaction.hide(fragmentManager.findFragmentById(R.id.mainFragment));
+                        fragmentTransaction.replace(R.id.content,new UpgradesFragment()).commit();
+                        return true;
+                }
+                return false;
+            }
+        });
+>>>>>>> main
     }
     @Override
         public ArrayList<Fish> getFish() {
