@@ -21,7 +21,7 @@
             android:layout_marginTop="74dp"
             android:src="@drawable/fish1" />
         <TextView
-            android:id="@+id/money"
+            android:id="@+id/moneyUpgrades"
             android:layout_width="96dp"
             android:layout_height="43dp"
             android:textSize="32sp"

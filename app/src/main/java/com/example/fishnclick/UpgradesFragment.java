@@ -33,7 +33,7 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
         carpe = MainActivity.getFish("Carpe");
         Button1 = (Button) view.findViewById(R.id.barB);
         Button2 = (Button) view.findViewById(R.id.carpeB);
-        moneyTextView = (TextView) view.findViewById(R.id.money);
+        moneyTextView = (TextView) view.findViewById(R.id.moneyUpgrades);
         Button1.setOnClickListener(this);
         Button2.setOnClickListener(this);
         BarLevel = (TextView) view.findViewById(R.id.barlevel);
