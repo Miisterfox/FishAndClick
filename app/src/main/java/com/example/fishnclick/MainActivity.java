@@ -1,15 +1,15 @@
 package com.example.fishnclick;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
->>>>>>> main
 
 import java.util.ArrayList;
 
@@ -18,13 +18,11 @@ public class MainActivity extends AppCompatActivity implements GestionInterface{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
         fish=new ArrayList<Fish>();
 
         fish.add(new Fish("Bar", 1, R.drawable.fish1));
         fish.add(new Fish("Carpe", 2, R.drawable.fish2));
-        setContentView(R.layout.activity_main);
-=======
+        setContentView(R.layout.activity_main)
 
         setContentView(R.layout.activity_main);
         fish = new ArrayList<>();
@@ -56,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements GestionInterface{
                 return false;
             }
         });
->>>>>>> main
     }
     @Override
         public ArrayList<Fish> getFish() {
