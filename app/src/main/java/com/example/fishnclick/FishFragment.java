@@ -25,7 +25,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     private TextView FishName;
     private ImageButton fishButton;
     private int fishIndex;
-    private TextView moneyText;
+    private static TextView moneyText;
     private static int money;
 
     public FishFragment() {
@@ -49,6 +49,12 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         moneyText.setText(money + "$");
         updateFish();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        System.out.println("Salut");
     }
     @Override
     public void onClick(View v) {
@@ -82,9 +88,14 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         SelectedFish.addClick();
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
         //moneyupdate
-        money += SelectedFish.getValue();
+        money += SelectedFish.getValue() * (1 + SelectedFish.getLevel());
+        updateMoney();
+    }
+
+    public static void updateMoney(){
         moneyText.setText(money + "$");
     }
+
 
     public void ArrowLeft() {
         if (fishIndex == 0) {

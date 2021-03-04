@@ -60,9 +60,11 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
     }
 
     public void OnLevelUp(Fish fish,Button button,TextView text){
-        FishFragment.setMoney(-(FishFragment.getMoney()*fish.getLevel()));
-        fish.levelUp();
-        button.setText(((1+fish.getLevel())*fish.getValue()) + "€");
-        text.setText("lvl " + fish.getLevel());
+        if(FishFragment.getMoney()-(fish.getValue()*fish.getLevel())>0) {
+            FishFragment.setMoney(-(fish.getValue() * fish.getLevel()));
+            fish.levelUp();
+            button.setText(((1 + fish.getLevel()) * fish.getValue()) + "€");
+            text.setText("lvl " + fish.getLevel());
+        }
     }
 }

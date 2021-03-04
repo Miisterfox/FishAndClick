@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity{
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 switch(item.getItemId()){
                     case R.id.fish:
+                        FishFragment.updateMoney();
                         fragmentTransaction.show(fragmentManager.findFragmentById(R.id.mainFragment));
                         fragmentTransaction.replace(R.id.content,new Fragment()).commit();
                         return true;
