@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -21,21 +20,18 @@ public class MyDatabase extends SQLiteOpenHelper {
     public MyDatabase(Context context, ArrayList<Fish> fishList) {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
         this.fishList=fishList;
-        Log.d("DATABASEFISH","Constructeur1");
+;
     }
     public MyDatabase(Context context) {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
-        Log.d("DATABASEFISH","Constructeur2");
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.d("DATABASEFISH","onCreate");
         String SQLScript = "CREATE TABLE " + TABLE_FISH + "("
                 +COLUMN_FISH_ID + " STRING PRIMARY KEY, "
                 +COLUMN_FISH_CLICKS + " INTEGER NOT NULL, "
                 +COLUMN_FISH_ENABLED + " BOOLEAN NOT NULL, "
                 +COLUMN_FISH_LEVEL + " INTEGER NOT NULL"+")";
-        Log.d("DATABASEFISH",SQLScript);
         db.execSQL(SQLScript);
         for (Fish f:fishList) {
             String SQLAddFish = "INSERT INTO " + TABLE_FISH + "("+COLUMN_FISH_ID+","+COLUMN_FISH_ENABLED+","+COLUMN_FISH_CLICKS+","+COLUMN_FISH_LEVEL+")"
@@ -50,7 +46,6 @@ public class MyDatabase extends SQLiteOpenHelper {
     }
 
     public void updateFish(Fish fish) {
-        Log.d("DATABASEFISH","updateFish");
         int enabled = fish.getEnabled() ? 1 : 0;
         String strSQL = "UPDATE " + TABLE_FISH
                 +" SET " + COLUMN_FISH_LEVEL + " = " + fish.getLevel() + ","
@@ -61,7 +56,6 @@ public class MyDatabase extends SQLiteOpenHelper {
         this.getWritableDatabase().close();
     }
     public void updateFishList(ArrayList<Fish> fishList) {
-        Log.d("DATABASEFISH","updateFishList");
         String sqlGETALL = "SELECT * FROM " + TABLE_FISH;
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -74,7 +68,6 @@ public class MyDatabase extends SQLiteOpenHelper {
                 boolean fishEnabled = cursor.getInt(2) == 1 ? true:false;
                 int Fishlvl = cursor.getInt(3);
                 for (Fish f:fishList) {
-                    Log.d("DATABASEFISH",fishName + " == "+ f.toString());
                     if(f.toString().equals(fishName)) {
                         f.setEnabled(fishEnabled);
                         f.setLevel(Fishlvl);

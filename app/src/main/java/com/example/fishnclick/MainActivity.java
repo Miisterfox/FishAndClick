@@ -1,7 +1,8 @@
 package com.example.fishnclick;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Chronometer;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity{
     private static int boost;
     private static TextView MoneyView;
     private static MyDatabase db;
+    private static SharedPreferences spMoney;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -35,15 +37,15 @@ public class MainActivity extends AppCompatActivity{
 
         db = new MyDatabase(this,fish);
         db.updateFishList(fish);
-        Log.d("DATABASEFISH","lol");
-        Log.d("DATABASEFISH",fish.get(0).getClicks()+"");
         super.onCreate(savedInstanceState);
         boost=1;
-        money=0;
         setContentView(R.layout.activity_main);
         MoneyView = (TextView) findViewById(R.id.money);
         updateMoney();
 
+        spMoney = getSharedPreferences("money", Context.MODE_PRIVATE);
+        money= spMoney.getInt("money",0);
+        MoneyView.setText(money+"$");
         CurrentBoost = (Chronometer) findViewById(R.id.CurrentBoost);
 
 
@@ -96,7 +98,6 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public static void updateFish(Fish fishItem) {
-        Log.i("DATABASEFISH", "click");
         db.updateFish(fishItem);
     }
     public static void updateMoney() {
@@ -120,6 +121,9 @@ public class MainActivity extends AppCompatActivity{
     public static void setMoney(int m) {
         money=m;
         updateMoney();
+        SharedPreferences.Editor editor = spMoney.edit();
+        editor.putInt("money",money);
+        editor.commit();
     }
 
 }
