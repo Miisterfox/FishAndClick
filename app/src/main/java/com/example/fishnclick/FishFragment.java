@@ -1,7 +1,7 @@
 package com.example.fishnclick;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,10 +34,8 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         arrowRight.setOnClickListener(this);
         money=MainActivity.getMoney();
         fishIndex = 0;
-        FishView = (TextView) view.findViewById(R.id.FishView);;
+        FishView = (TextView) view.findViewById(R.id.FishView);
         FishName = (TextView) view.findViewById(R.id.FishName);
-        moneyText = (TextView) view.findViewById(R.id.moneyUpgrades);
-        moneyText.setText(money + "$");
         updateFish();
         return view;
     }
@@ -66,33 +64,35 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     }
 
     private void updateFish() {
-        Fish SelectedFish = MainActivity.getFish().get(fishIndex);
-
+        Fish SelectedFish = MainActivity.getFishList().get(fishIndex);
+        fishButton.setEnabled(SelectedFish.getEnabled());
+        if(!SelectedFish.getEnabled()) {
+            fishButton.setColorFilter(Color.rgb(128,128,128));
+        }
+        else {
+            fishButton.setColorFilter(null);
+        }
         FishName.setText(SelectedFish.toString());
-        FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
+        FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString());
         fishButton.setImageResource(SelectedFish.getLogo());
     }
 
 
     public void FishClick() {
-        Fish SelectedFish = MainActivity.getFish().get(fishIndex);
+        Fish SelectedFish = MainActivity.getFishList().get(fishIndex);
         SelectedFish.addClick();
-        FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString() + "s");
+        FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString());
         //moneyupdate
-        Log.d("Boost",""+MainActivity.getBoost());
         money += SelectedFish.getValue() *MainActivity.getBoost() * (1 + SelectedFish.getLevel());
-        updateMoney();
+        MainActivity.setMoney(money);
+        MainActivity.updateFish(SelectedFish);
     }
 
-    public void updateMoney() {
-        moneyText.setText(money + "$");
-        MainActivity.setMoney(money);
-    }
 
 
     public void ArrowLeft() {
         if (fishIndex == 0) {
-            fishIndex = MainActivity.getFish().size() - 1;
+            fishIndex = MainActivity.getFishList().size() - 1;
         } else {
             fishIndex--;
         }
@@ -101,7 +101,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
 
 
     public void ArrowRight() {
-        if (fishIndex == MainActivity.getFish().size() - 1) {
+        if (fishIndex == MainActivity.getFishList().size() - 1) {
             fishIndex = 0;
         } else {
             fishIndex++;

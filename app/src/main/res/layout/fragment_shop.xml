@@ -7,15 +7,6 @@
 
     tools:context=".ShopFragment">
 
-    <TextView
-        android:id="@+id/moneyShop"
-        android:layout_width="96dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textSize="32sp" />
-
     <Button
         android:id="@+id/Boost1"
         android:layout_width="119dp"
@@ -24,8 +15,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="146dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="143dp"
         android:text="BUY BOOST" />
 </RelativeLayout>

@@ -2,16 +2,16 @@
 s    <item
         android:id="@+id/fish"
         android:enabled="true"
-        android:icon="@drawable/fish1"
+        android:icon="@drawable/fish2"
         android:title="@string/bottom_navigation_menu_fish"/>
     <item
         android:id="@+id/shop"
         android:enabled="true"
-        android:icon="@drawable/fish1"
+        android:icon="@drawable/shop"
         android:title="@string/bottom_navigation_menu_shop"/>
     <item
         android:id="@+id/upgrades"
         android:enabled="true"
-        android:icon="@drawable/fish1"
+        android:icon="@drawable/upgrades"
         android:title="@string/bottom_navigation_menu_upgrades"/>
 </menu>
