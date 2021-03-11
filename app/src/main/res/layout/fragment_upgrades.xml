@@ -11,96 +11,295 @@
     android:layout_height="match_parent"
     tools:context=".UpgradesFragment">
 
+        <Button
+            android:id="@+id/buyfish1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf1"
+            android:text="BUY" />
+
         <ImageView
             android:id="@+id/imgf1"
             android:layout_width="100dp"
             android:layout_height="86dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="74dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="90dp"
             android:src="@drawable/fish1" />
+
         <TextView
-            android:id="@+id/moneyUpgrades"
-            android:layout_width="96dp"
-            android:layout_height="43dp"
-            android:textSize="32sp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="TextView" />
-        <TextView
-            android:id="@+id/barlevel"
+            android:id="@+id/lvlfish1"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="164dp"
-            android:layout_marginEnd="270dp"
+            android:layout_below="@+id/imgf1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/fishname"
-            android:layout_width="93dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:id="@+id/fish1name"
+            android:layout_width="88dp"
+            android:layout_height="19dp"
+            android:layout_below="@+id/buyfish1"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="77dp"
-            android:layout_marginEnd="67dp"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf1"
             android:gravity="center"
             android:text="Bar" />
 
         <Button
-            android:id="@+id/barB"
+            android:id="@+id/buyfish2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/fish1name"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="70dp"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf1"
             android:text="BUY" />
 
+
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgf2"
             android:layout_width="100dp"
             android:layout_height="86dp"
+            android:layout_below="@+id/lvlfish1"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="274dp" />
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="66dp"
+            android:src="@drawable/fish2" />
+
 
         <TextView
-            android:id="@+id/carpelevel"
+            android:id="@+id/lvlfish2"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="364dp"
-            android:layout_marginEnd="270dp"
+            android:layout_below="@+id/imgf2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="TextView" />
 
+
         <TextView
-            android:id="@+id/fishname2"
-            android:layout_width="93dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:id="@+id/fish2name"
+            android:layout_width="88dp"
+            android:layout_height="19dp"
+            android:layout_below="@+id/buyfish2"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="278dp"
-            android:layout_marginEnd="67dp"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf1"
             android:gravity="center"
-            android:text="Carpe" />
+            android:text="Bar" />
 
         <Button
-            android:id="@+id/carpeB"
+            android:id="@+id/buyfish3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/fish2name"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="70dp"
-            android:text="Buy" />
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf2"
+            android:text="BUY" />
 
 
+        <ImageView
+            android:id="@+id/imgf3"
+            android:layout_width="100dp"
+            android:layout_height="86dp"
+            android:layout_below="@+id/lvlfish2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="66dp"
+            android:src="@drawable/fish3" />
+
+
+        <TextView
+            android:id="@+id/lvlfish3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgf3"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="TextView" />
+
+
+        <TextView
+            android:id="@+id/fish3name"
+            android:layout_width="88dp"
+            android:layout_height="19dp"
+            android:layout_below="@+id/buyfish3"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf2"
+            android:gravity="center"
+            android:text="Eel" />
+
+        <Button
+            android:id="@+id/buyfish4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fish3name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf3"
+            android:text="BUY" />
+
+
+        <ImageView
+            android:id="@+id/imgf4"
+            android:layout_width="100dp"
+            android:layout_height="86dp"
+            android:layout_below="@+id/lvlfish3"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="66dp"
+            android:src="@drawable/fish4" />
+
+
+        <TextView
+            android:id="@+id/lvlfish4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgf4"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="TextView" />
+
+
+        <TextView
+            android:id="@+id/fish4name"
+            android:layout_width="88dp"
+            android:layout_height="19dp"
+            android:layout_below="@+id/buyfish4"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf3"
+            android:gravity="center"
+            android:text="Octopus" />
+
+        <Button
+            android:id="@+id/buyfish5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fish4name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf4"
+            android:text="BUY" />
+
+
+        <ImageView
+            android:id="@+id/imgf5"
+            android:layout_width="100dp"
+            android:layout_height="86dp"
+            android:layout_below="@+id/lvlfish4"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="66dp"
+            android:src="@drawable/fish5" />
+
+
+        <TextView
+            android:id="@+id/lvlfish5"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgf5"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="TextView" />
+
+
+        <TextView
+            android:id="@+id/fish5name"
+            android:layout_width="88dp"
+            android:layout_height="19dp"
+            android:layout_below="@+id/buyfish5"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf4"
+            android:gravity="center"
+            android:text="Shark" />
+
+        <Button
+            android:id="@+id/buyfish6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fish5name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="102dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf5"
+            android:text="BUY" />
+
+
+        <ImageView
+            android:id="@+id/imgf6"
+            android:layout_width="100dp"
+            android:layout_height="86dp"
+            android:layout_below="@+id/lvlfish5"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="66dp"
+            android:src="@drawable/fish6" />
+
+
+        <TextView
+            android:id="@+id/lvlfish6"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgf6"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="TextView" />
+
+
+        <TextView
+            android:id="@+id/fish6name"
+            android:layout_width="88dp"
+            android:layout_height="19dp"
+            android:layout_below="@+id/buyfish6"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="88dp"
+            android:layout_toEndOf="@+id/imgf5"
+            android:gravity="center"
+            android:text="Moonfish" />
     </RelativeLayout>
     </ScrollView>

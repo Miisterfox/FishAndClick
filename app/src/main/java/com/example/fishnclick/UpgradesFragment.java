@@ -1,10 +1,13 @@
 package com.example.fishnclick;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -13,14 +16,12 @@ import java.util.ArrayList;
 
 public class UpgradesFragment extends Fragment implements View.OnClickListener{
     private ArrayList<Fish> fish;
-    private Button Button1;
-    private Button Button2;
-    private TextView SalmonLevel;
-    private TextView BarLevel;
-    private TextView moneyTextView;
-    Fish Salmon;
-    Fish bar;
-    private int[] levels = {10,50,200};
+    private int[] buttonList = {R.id.buyfish1,R.id.buyfish2,R.id.buyfish3,R.id.buyfish4,R.id.buyfish5,R.id.buyfish6};
+    private int[] lvlList = {R.id.lvlfish1,R.id.lvlfish2,R.id.lvlfish3,R.id.lvlfish4,R.id.lvlfish5,R.id.lvlfish6};
+    private int[] fishImage = {R.id.imgf1,R.id.imgf2,R.id.imgf3,R.id.imgf4,R.id.imgf5,R.id.imgf6};
+    private ArrayList<Fish> fishList;
+    private int[] levels = {10,50,200,500,1000,2500,10000};
+    private View view;
     public UpgradesFragment() {
         // Required empty public constructor
     }
@@ -28,73 +29,77 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_upgrades, container, false);
-        bar = MainActivity.getFish("Bar");
-        Salmon = MainActivity.getFish("Salmon");
-        Button1 = (Button) view.findViewById(R.id.barB);
-        Button2 = (Button) view.findViewById(R.id.carpeB);
-        moneyTextView = (TextView) view.findViewById(R.id.moneyUpgrades);
-        Button1.setOnClickListener(this);
-        Button2.setOnClickListener(this);
-        BarLevel = (TextView) view.findViewById(R.id.barlevel);
-        SalmonLevel = (TextView) view.findViewById(R.id.carpelevel);
+        view = inflater.inflate(R.layout.fragment_upgrades, container, false);
+        fishList =MainActivity.getFishList();
+        for(int i=0;i<buttonList.length;i++) {
+            Button button = (Button) view.findViewById(buttonList[i]);
+            button.setOnClickListener(this);
+
+        }
         setLEVELS();
-        updateMoney();
         return view;
     }
-    public void updateMoney() {
-        int money=MainActivity.getMoney();
-        moneyTextView.setText(money+"$");
-    }
+
     public void setLEVELS() {
-        if(bar.getLevel()!=levels.length) {
-            BarLevel.setText("lvl " + bar.getLevel());
-            Button1.setText(levels[bar.getLevel()] + "€");
-        }
-        else {
-            BarLevel.setText("MAX");
-            Button1.setText("lvl MAX");
-            Button1.setEnabled(false);
-        }
-        if(Salmon.getLevel()!=levels.length) {
-            SalmonLevel.setText("lvl " + Salmon.getLevel());
-            Button2.setText(levels[Salmon.getLevel()] + "€");
-        }
-        else {
-            SalmonLevel.setText("MAX");
-            Button2.setText("lvl MAX");
-            Button2.setEnabled(false);
+        for(int i=0;i<lvlList.length;i++) {
+            TextView BarLevel = view.findViewById(lvlList[i]);
+            Button buybutton = view.findViewById(buttonList[i]);
+            ImageView fishimg = (ImageView) view.findViewById(fishImage[i]);
+            Fish fish = fishList.get(i);
+            if(!fish.getEnabled()) {
+                fishimg.setColorFilter(Color.rgb(128,128,128));
+                BarLevel.setText("Not unlocked");
+                buybutton.setText(fish.getValue()*100+"€");
+            }
+            else {
+                if (fish.getLevel() != levels.length) {
+                    BarLevel.setText("lvl " + fish.getLevel());
+                    buybutton.setText(levels[fish.getLevel()]*fish.getValue() + "€");
+                } else {
+                    BarLevel.setText("MAX");
+                    buybutton.setText("lvl MAX");
+                    buybutton.setEnabled(false);
+                }
+            }
         }
     }
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
-            case R.id.barB:
-                Fish bar = MainActivity.getFish("Bar");
-                OnLevelUp(bar,Button1,BarLevel);
-                break;
-            case R.id.carpeB:
-                Fish carpe = MainActivity.getFish("Carpe");
-                OnLevelUp(carpe,Button2, SalmonLevel);
-                break;
+        Log.e("test","lol on arrive ici1");
+        for(int i=0;i<buttonList.length;i++) {
+            if(v.getId()==buttonList[i]) {
+                Button button = (Button) v.findViewById(buttonList[i]);
+                TextView BarLevel = (TextView) view.findViewById(lvlList[i]);
+                ImageView imgFish = (ImageView) view.findViewById(fishImage[i]);
+                OnLevelUp(fishList.get(i),button,BarLevel,imgFish);
+            }
         }
     }
 
-    public void OnLevelUp(Fish fish,Button button,TextView text) {
-        if (fish.getLevel() != levels.length) {
-            if (MainActivity.getMoney() - (levels[fish.getLevel()]) >= 0) {
-                MainActivity.setMoney(MainActivity.getMoney() - levels[fish.getLevel()]);
-                fish.levelUp();
-                if(fish.getLevel()==levels.length) {
-                    button.setText("MAX");
-                    text.setText("lvl MAX");
-                    button.setEnabled(false);
+    public void OnLevelUp(Fish fish,Button button,TextView text,ImageView img) {
+        if(!fish.getEnabled()) {
+            if (MainActivity.getMoney() - (fish.getValue() * 100) >= 0) {
+                MainActivity.setMoney(MainActivity.getMoney() - (fish.getValue() * 100));
+                fish.setEnabled();
+                button.setText(levels[fish.getLevel()] * fish.getValue() + "€");
+                text.setText("lvl " + fish.getLevel());
+                img.setColorFilter(null);
+            }
+        }
+        else {
+            if (fish.getLevel() != levels.length) {
+                if (MainActivity.getMoney() - (levels[fish.getLevel()]) >= 0) {
+                    MainActivity.setMoney(MainActivity.getMoney() - levels[fish.getLevel()]);
+                    fish.levelUp();
+                    if (fish.getLevel() == levels.length) {
+                        button.setText("MAX");
+                        text.setText("lvl MAX");
+                        button.setEnabled(false);
+                    } else {
+                        button.setText(levels[fish.getLevel()] + "€");
+                        text.setText("lvl " + fish.getLevel());
+                    }
                 }
-                else {
-                    button.setText(levels[fish.getLevel()] + "€");
-                    text.setText("lvl " + fish.getLevel());
-                }
-                updateMoney();
             }
         }
     }

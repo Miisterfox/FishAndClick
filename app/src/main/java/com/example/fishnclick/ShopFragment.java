@@ -21,8 +21,6 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.fragment_shop, container, false);
         BoostButton1 = (Button) view.findViewById(R.id.Boost1);
         BoostButton1.setOnClickListener(this);
-        moneyTextView = (TextView) view.findViewById(R.id.moneyShop);
-        updateMoney();
         disableBoosts();
         return view;
 
@@ -44,16 +42,11 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public void updateMoney() {
-        int money=MainActivity.getMoney();
-        moneyTextView.setText(money+"$");
-    }
 
     private void buyBoost1() {
         int boostPrice=1;
         if(MainActivity.getMoney()>=boostPrice) {
             MainActivity.setMoney(MainActivity.getMoney()-boostPrice);
-            updateMoney();
             MainActivity.setBoost(SystemClock.elapsedRealtime() + 10000,2);
             disableBoosts();
         }

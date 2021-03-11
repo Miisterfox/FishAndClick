@@ -12,6 +12,11 @@ public class Fish {
         this.value=value;
         this.logoID=logo;
         clicks=0;
+        this.enabled=true;
+    }
+    public Fish(String name, int value,int logo,boolean enabled) {
+        this(name,value,logo);
+        this.enabled=enabled;
     }
     public void addClick() {
         clicks++;
@@ -19,6 +24,7 @@ public class Fish {
     public void setEnabled() {
         this.enabled=true;
     }
+    public boolean getEnabled() { return enabled;}
     public int getClicks() {
         return clicks;
     }

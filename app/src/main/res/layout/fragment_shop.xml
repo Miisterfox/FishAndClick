@@ -7,15 +7,6 @@
 
     tools:context=".ShopFragment">
 
-    <TextView
-        android:id="@+id/moneyShop"
-        android:layout_width="96dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textSize="32sp" />
-
     <Button
         android:id="@+id/Boost1"
         android:layout_width="119dp"
