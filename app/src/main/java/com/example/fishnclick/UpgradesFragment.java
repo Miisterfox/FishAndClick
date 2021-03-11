@@ -15,10 +15,10 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
     private ArrayList<Fish> fish;
     private Button Button1;
     private Button Button2;
-    private TextView CarpeLevel;
+    private TextView SalmonLevel;
     private TextView BarLevel;
     private TextView moneyTextView;
-    Fish carpe;
+    Fish Salmon;
     Fish bar;
     private int[] levels = {10,50,200};
     public UpgradesFragment() {
@@ -30,14 +30,14 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_upgrades, container, false);
         bar = MainActivity.getFish("Bar");
-        carpe = MainActivity.getFish("Carpe");
+        Salmon = MainActivity.getFish("Salmon");
         Button1 = (Button) view.findViewById(R.id.barB);
         Button2 = (Button) view.findViewById(R.id.carpeB);
         moneyTextView = (TextView) view.findViewById(R.id.moneyUpgrades);
         Button1.setOnClickListener(this);
         Button2.setOnClickListener(this);
         BarLevel = (TextView) view.findViewById(R.id.barlevel);
-        CarpeLevel = (TextView) view.findViewById(R.id.carpelevel);
+        SalmonLevel = (TextView) view.findViewById(R.id.carpelevel);
         setLEVELS();
         updateMoney();
         return view;
@@ -56,12 +56,12 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
             Button1.setText("lvl MAX");
             Button1.setEnabled(false);
         }
-        if(carpe.getLevel()!=levels.length) {
-            CarpeLevel.setText("lvl " + carpe.getLevel());
-            Button2.setText(levels[carpe.getLevel()] + "€");
+        if(Salmon.getLevel()!=levels.length) {
+            SalmonLevel.setText("lvl " + Salmon.getLevel());
+            Button2.setText(levels[Salmon.getLevel()] + "€");
         }
         else {
-            CarpeLevel.setText("MAX");
+            SalmonLevel.setText("MAX");
             Button2.setText("lvl MAX");
             Button2.setEnabled(false);
         }
@@ -75,7 +75,7 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.carpeB:
                 Fish carpe = MainActivity.getFish("Carpe");
-                OnLevelUp(carpe,Button2,CarpeLevel);
+                OnLevelUp(carpe,Button2, SalmonLevel);
                 break;
         }
     }

@@ -7,7 +7,7 @@ s    <item
     <item
         android:id="@+id/shop"
         android:enabled="true"
-        android:icon="@drawable/fish1"
+        android:icon="@drawable/shop"
         android:title="@string/bottom_navigation_menu_shop"/>
     <item
         android:id="@+id/upgrades"

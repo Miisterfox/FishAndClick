@@ -1,13 +1,12 @@
 package com.example.fishnclick;
 
-import android.os.Handler;
-
 public class Fish {
     private String name;
     private int value;
     private int clicks;
     private int logoID;
     private int level;
+    private boolean enabled;
     public Fish(String name, int value,int logo) {
         this.name=name;
         this.value=value;
@@ -17,7 +16,9 @@ public class Fish {
     public void addClick() {
         clicks++;
     }
-
+    public void setEnabled() {
+        this.enabled=true;
+    }
     public int getClicks() {
         return clicks;
     }

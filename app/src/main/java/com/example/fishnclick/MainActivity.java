@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         fish = new ArrayList<>();
         fish.add(new Fish("Bar", 1, R.drawable.fish1));
-        fish.add(new Fish("Carpe", 2, R.drawable.fish2));
+        fish.add(new Fish("Salmon", 2, R.drawable.fish2));
         CurrentBoost = (Chronometer) findViewById(R.id.CurrentBoost);
         CurrentBoost.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
                 if(chronometer.getText().toString().equalsIgnoreCase("00:00")) {
                     chronometer.stop();
-                    chronometer.setText("lol c fini");
+                    chronometer.setText("");
                     setBoost(1);
                     ShopFragment.disableBoosts();
                 }
