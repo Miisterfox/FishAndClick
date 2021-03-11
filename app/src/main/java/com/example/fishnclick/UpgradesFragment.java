@@ -102,5 +102,6 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
                 }
             }
         }
+        MainActivity.updateFish(fish);
     }
 }

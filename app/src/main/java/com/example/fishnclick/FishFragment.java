@@ -2,7 +2,6 @@ package com.example.fishnclick;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,9 +83,9 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         SelectedFish.addClick();
         FishView.setText(SelectedFish.getClicks() + " " + SelectedFish.toString());
         //moneyupdate
-        Log.d("Boost",""+MainActivity.getBoost());
         money += SelectedFish.getValue() *MainActivity.getBoost() * (1 + SelectedFish.getLevel());
         MainActivity.setMoney(money);
+        MainActivity.updateFish(SelectedFish);
     }
 
 

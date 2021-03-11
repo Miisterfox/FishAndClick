@@ -21,14 +21,10 @@ public class MainActivity extends AppCompatActivity{
     private static Chronometer CurrentBoost;
     private static int boost;
     private static TextView MoneyView;
+    private static MyDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        boost=1;
-        money=0;
-        setContentView(R.layout.activity_main);
-        MoneyView = (TextView) findViewById(R.id.money);
-        updateMoney();
+
         fish = new ArrayList<>();
         fish.add(new Fish("Bar", 1, R.drawable.fish1));
         fish.add(new Fish("Salmon", 2, R.drawable.fish2));
@@ -36,7 +32,21 @@ public class MainActivity extends AppCompatActivity{
         fish.add(new Fish("Octopus", 10, R.drawable.fish4,false));
         fish.add(new Fish("Shark", 25, R.drawable.fish5,false));
         fish.add(new Fish("Moonfish", 50, R.drawable.fish6,false));
+
+        db = new MyDatabase(this,fish);
+        db.updateFishList(fish);
+        Log.d("DATABASEFISH","lol");
+        Log.d("DATABASEFISH",fish.get(0).getClicks()+"");
+        super.onCreate(savedInstanceState);
+        boost=1;
+        money=0;
+        setContentView(R.layout.activity_main);
+        MoneyView = (TextView) findViewById(R.id.money);
+        updateMoney();
+
         CurrentBoost = (Chronometer) findViewById(R.id.CurrentBoost);
+
+
         CurrentBoost.setText("");
         CurrentBoost.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
@@ -84,6 +94,11 @@ public class MainActivity extends AppCompatActivity{
         }
         return null;
     }
+
+    public static void updateFish(Fish fishItem) {
+        Log.i("DATABASEFISH", "click");
+        db.updateFish(fishItem);
+    }
     public static void updateMoney() {
         MoneyView.setText(money+"$");
     }
@@ -91,7 +106,6 @@ public class MainActivity extends AppCompatActivity{
         CurrentBoost.setText("");
         CurrentBoost.setBase(durée);
         setBoost(boost);
-        Log.d("Boost",""+MainActivity.getBoost());
         CurrentBoost.start();
     }
     public static int getMoney() {
