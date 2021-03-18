@@ -18,10 +18,10 @@
         android:layout_marginStart="133dp"
         android:layout_marginTop="118dp"
         android:layout_marginEnd="133dp"
-        android:text="BUY BOOST" />
+        android:text="BUY (10 000$)" />
 
     <Button
-        android:id="@+id/boost3"
+        android:id="@+id/boost2"
         android:layout_width="119dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Boost1"
@@ -30,5 +30,44 @@
         android:layout_marginStart="133dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="133dp"
-        android:text="BUY BOOST" />
+        android:text="BUY (10 000$)" />
+
+    <Button
+        android:id="@+id/boost3"
+        android:layout_width="119dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boost2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="133dp"
+        android:text="BUY (50 000$)" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
+        android:text="10s 20x" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="226dp"
+        android:text="5min 10x" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="353dp"
+        android:text="1hr 5x" />
 </RelativeLayout>
