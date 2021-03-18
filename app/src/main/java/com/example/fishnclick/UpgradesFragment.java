@@ -53,7 +53,7 @@ public class UpgradesFragment extends Fragment implements View.OnClickListener{
             }
             else {
                 if (fish.getLevel() != levels.length) {
-                    BarLevel.setText("lvl " + fish.getLevel());
+                    BarLevel.setText("lvl " + (fish.getLevel() +1));
                     buybutton.setText(levels[fish.getLevel()]*fish.getValue() + "€");
                 } else {
                     BarLevel.setText("MAX");
