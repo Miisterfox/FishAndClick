@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@drawable/upgradesbg">
 
     <RelativeLayout
     android:layout_width="match_parent"
@@ -21,7 +23,8 @@
             android:layout_marginTop="100dp"
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf1"
-            android:text="BUY" />
+            android:text="BUY"
+            android:textColor="#FFFFFF"/>
 
         <ImageView
             android:id="@+id/imgf1"
@@ -42,7 +45,8 @@
             android:layout_marginStart="44dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#FFFFFF"/>
 
         <TextView
             android:id="@+id/fish1name"
@@ -55,7 +59,8 @@
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf1"
             android:gravity="center"
-            android:text="Bar" />
+            android:text="Bar"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/buyfish2"
@@ -67,7 +72,8 @@
             android:layout_marginTop="102dp"
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf1"
-            android:text="BUY" />
+            android:text="BUY"
+            android:textColor="#FFFFFF"/>
 
 
         <ImageView
@@ -90,7 +96,8 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#FFFFFF"/>
 
 
         <TextView
@@ -104,7 +111,8 @@
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf1"
             android:gravity="center"
-            android:text="Bar" />
+            android:text="Bar"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/buyfish3"
@@ -116,7 +124,8 @@
             android:layout_marginTop="102dp"
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf2"
-            android:text="BUY" />
+            android:text="BUY"
+            android:textColor="#FFFFFF"/>
 
 
         <ImageView
@@ -139,7 +148,8 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#FFFFFF"/>
 
 
         <TextView
@@ -153,7 +163,8 @@
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf2"
             android:gravity="center"
-            android:text="Eel" />
+            android:text="Eel"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/buyfish4"
@@ -165,7 +176,8 @@
             android:layout_marginTop="102dp"
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf3"
-            android:text="BUY" />
+            android:text="BUY"
+            android:textColor="#FFFFFF"/>
 
 
         <ImageView
@@ -188,7 +200,8 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#FFFFFF"/>
 
 
         <TextView
@@ -202,7 +215,8 @@
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf3"
             android:gravity="center"
-            android:text="Octopus" />
+            android:text="Octopus"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/buyfish5"
@@ -214,7 +228,8 @@
             android:layout_marginTop="102dp"
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf4"
-            android:text="BUY" />
+            android:text="BUY"
+            android:textColor="#FFFFFF"/>
 
 
         <ImageView
@@ -237,7 +252,8 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#FFFFFF"/>
 
 
         <TextView
@@ -251,7 +267,8 @@
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf4"
             android:gravity="center"
-            android:text="Shark" />
+            android:text="Shark"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/buyfish6"
@@ -263,7 +280,8 @@
             android:layout_marginTop="102dp"
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf5"
-            android:text="BUY" />
+            android:text="BUY"
+            android:textColor="#FFFFFF"/>
 
 
         <ImageView
@@ -286,7 +304,8 @@
             android:layout_marginStart="41dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#FFFFFF"/>
 
 
         <TextView
@@ -300,6 +319,8 @@
             android:layout_marginEnd="88dp"
             android:layout_toEndOf="@+id/imgf5"
             android:gravity="center"
-            android:text="Moonfish" />
+            android:text="Moonfish"
+            android:textColor="#FFFFFF"/>
+
     </RelativeLayout>
     </ScrollView>
