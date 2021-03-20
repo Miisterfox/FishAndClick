@@ -40,11 +40,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        System.out.println("Salut");
-    }
+
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
@@ -59,6 +55,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
                 break;
         }
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     }

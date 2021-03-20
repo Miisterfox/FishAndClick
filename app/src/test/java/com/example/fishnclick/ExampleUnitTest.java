@@ -1,6 +1,7 @@
 package com.example.fishnclick;
-
+import org.junit.Rule;
 import org.junit.Test;
+
 
 import static org.junit.Assert.*;
 
@@ -11,7 +12,11 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void levelUp_isCorrect(){
+        int fishValue = 1;
+        Fish bar = new Fish("Bar", fishValue, R.drawable.fish1);
+        bar.levelUp();
+        assertEquals(bar.getLevel(),1);
     }
+
 }
