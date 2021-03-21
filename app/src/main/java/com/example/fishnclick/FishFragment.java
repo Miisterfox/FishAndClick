@@ -13,10 +13,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class FishFragment extends Fragment implements View.OnClickListener{
-    private TextView FishView;
-    private TextView FishName;
-    private ImageButton fishButton;
-    private int fishIndex;
+    private static TextView FishView;
+    private static TextView FishName;
+    private static ImageButton fishButton;
+    private static int fishIndex;
     private static TextView moneyText;
     private int money;
     public FishFragment() {
@@ -60,7 +60,7 @@ public class FishFragment extends Fragment implements View.OnClickListener{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     }
 
-    private void updateFish() {
+    public static void updateFish() {
         Fish SelectedFish = MainActivity.getFishList().get(fishIndex);
         fishButton.setEnabled(SelectedFish.getEnabled());
         if(!SelectedFish.getEnabled()) {
