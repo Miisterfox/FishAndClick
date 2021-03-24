@@ -13,5 +13,3 @@
 .externalNativeBuild
 .cxx
 local.properties
-android/local.properties
-.android/local.properties

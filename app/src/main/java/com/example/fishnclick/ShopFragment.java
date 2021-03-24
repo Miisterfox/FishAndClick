@@ -14,7 +14,6 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
     private static Button BoostButton1;
     private static Button BoostButton3;
     private static Button BoostButton2;
-    private static Button autoclick;
     View view;
     TextView moneyTextView;
     public ShopFragment() {
@@ -25,11 +24,9 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
         BoostButton1 = (Button) view.findViewById(R.id.Boost1);
         BoostButton2 = (Button) view.findViewById(R.id.boost2);
         BoostButton3 = (Button) view.findViewById(R.id.boost3);
-        autoclick = (Button) view.findViewById(R.id.autoClick);
         BoostButton1.setOnClickListener(this);
         BoostButton3.setOnClickListener(this);
         BoostButton2.setOnClickListener(this);
-        autoclick.setOnClickListener(this);
         disableBoosts();
         return view;
 
@@ -46,7 +43,6 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
             BoostButton3.setEnabled(true);
             BoostButton2.setEnabled(true);
         }
-        autoclick.setEnabled(!MainActivity.isAutoClickOn());
     }
     public void onClick(View v) {
         switch(v.getId()) {
@@ -59,20 +55,9 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
                 case R.id.boost3:
                 buyBoost(50000,(60000*60));
                 break;
-            case R.id.autoClick:
-                buyAutoClick();
-                break;
         }
     }
 
-    private void buyAutoClick() {
-        int price = 1;
-        if(MainActivity.getMoney()>=price) {
-            MainActivity.setMoney(MainActivity.getMoney()-price);
-            MainActivity.enableAutoClick();
-            disableBoosts();
-        }
-    }
 
     private void buyBoost(int boostPrice, int durée) {
         if(MainActivity.getMoney()>=boostPrice) {

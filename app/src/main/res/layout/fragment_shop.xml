@@ -76,26 +76,4 @@
         android:layout_marginTop="353dp"
         android:text="1hr 5x"
         android:textColor="#FFFFFF"/>
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="480dp"
-        android:text="Autoclick"
-        android:textColor="#FFFFFF"/>
-    <Button
-        android:id="@+id/autoClick"
-        android:layout_width="119dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/boost3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="133dp"
-        android:text="BUY (50 000$)"
-        android:textColor="#FFFFFF"/>
 </RelativeLayout>
